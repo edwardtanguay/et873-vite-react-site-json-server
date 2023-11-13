@@ -6,9 +6,11 @@ export const PageEmployees = () => {
 	const [employees, setEmployees] = useState<IEmployee[]>([])
 	
 	useEffect(() => {
-		
+		(async () => {
+			setEmployees((await axios.get('http://localhost:3021/employees')).data);
+		})();	
 	}, []);
 	return (
-		<p>This is the employees page.</p>
+		<p>There are {employees.length} employees.</p>
 	)
 }
