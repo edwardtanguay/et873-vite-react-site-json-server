@@ -55,6 +55,14 @@ export const PageSimpleForm = () => {
 					</label>
 					<input type="text" id="lastName" name="lastName" required />
 				</div>
+				
+				<div className="mb-4 flex gap-2">
+					<label className="w-[10rem]" htmlFor="age">
+					Age:
+					</label>
+					<input type="text" id="age" name="age" required />
+				</div>
+				
 				<div className="mb-4 flex gap-2">
 					<label className="w-[10rem]" htmlFor="hireDate">
 						Hire Date:
