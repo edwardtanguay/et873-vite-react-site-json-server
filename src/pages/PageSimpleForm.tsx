@@ -10,7 +10,10 @@ export const PageSimpleForm = () => {
 	const handleFormSubmit = (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		const formData = new FormData(event.target as HTMLFormElement);
-		const employee: IFrontendEmployee = ({ ...Object.fromEntries(formData), age: Number(formData.get("age")) }) as IFrontendEmployee;
+		const employee: IFrontendEmployee = {
+			...Object.fromEntries(formData),
+			age: Number(formData.get("age")),
+		} as IFrontendEmployee;
 		const headers = {
 			"Access-Control-Allow-Origin": "*",
 			"Content-Type": "application/json",
@@ -21,10 +24,10 @@ export const PageSimpleForm = () => {
 				const response = await axios.post(
 					"http://localhost:3021/employees",
 					employee,
-					{headers}
+					{ headers }
 				);
 				if (response.status === 201) {
-					navigate('/info');
+					navigate("/employees");
 				} else {
 					console.log(`ERROR: ${response.status}`);
 				}
@@ -56,10 +59,10 @@ export const PageSimpleForm = () => {
 					</label>
 					<input type="text" id="lastName" name="lastName" required />
 				</div>
-				
+
 				<div className="mb-4 flex gap-2">
 					<label className="w-[10rem]" htmlFor="age">
-					Age:
+						Age:
 					</label>
 					<input type="number" id="age" name="age" required />
 				</div>
