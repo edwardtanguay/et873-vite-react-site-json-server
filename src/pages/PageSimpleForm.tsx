@@ -38,7 +38,7 @@ export const PageSimpleForm = () => {
 		})();
 	};
 	return (
-		<form onSubmit={handleFormSubmit} encType="multipart/form-data">
+		<form onSubmit={handleFormSubmit}>
 			<fieldset className="border border-slate-500 p-4 rounded">
 				<legend>New Employee</legend>
 

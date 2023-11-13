@@ -44,6 +44,15 @@
       "employeeNumber": "D-2343",
       "notes": "added for import test",
       "id": 7
+    },
+    {
+      "firstName": "John",
+      "lastName": "Newton",
+      "age": 23,
+      "hireDate": "2005-02-02",
+      "employeeNumber": "D-2384",
+      "notes": "added again locally",
+      "id": 8
     }
   ]
 }
