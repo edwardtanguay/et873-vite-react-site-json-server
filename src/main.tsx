@@ -3,9 +3,9 @@ import App from "./App.tsx";
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import "./index.scss";
 import { PageSimpleForm } from "./pages/PageSimpleForm.tsx";
-import { PageInfo } from "./pages/PageInfo.tsx";
 import { PageAbout } from "./pages/PageAbout.tsx";
 import { Page404 } from "./pages/Page404.tsx";
+import { PageEmployees } from "./pages/PageEmployees.tsx";
 
 const router = createBrowserRouter([
 	{
@@ -18,11 +18,11 @@ const router = createBrowserRouter([
 				element: <PageSimpleForm />
 			},
 			{
-				path: "info",
-				element: <PageInfo />,
+				path: "/employees",
+				element: <PageEmployees />,
 			},
 			{
-				path: "about",
+				path: "/about",
 				element: <PageAbout />,
 			},
 			{
