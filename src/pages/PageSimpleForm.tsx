@@ -3,9 +3,12 @@ import { FormEvent } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { IFrontendEmployee } from "../interfaces";
+import * as config from '../config';
+
 
 export const PageSimpleForm = () => {
 	const navigate = useNavigate();
+
 
 	const handleFormSubmit = (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
@@ -38,6 +41,7 @@ export const PageSimpleForm = () => {
 	};
 	return (
 		<form onSubmit={handleFormSubmit} encType="multipart/form-data">
+			environment = [{config.environment}]
 			<fieldset className="border border-slate-500 p-4 rounded">
 				<legend>New Employee</legend>
 
