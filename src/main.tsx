@@ -6,6 +6,7 @@ import { PageSimpleForm } from "./pages/PageSimpleForm.tsx";
 import { PageAbout } from "./pages/PageAbout.tsx";
 import { Page404 } from "./pages/Page404.tsx";
 import { PageEmployees } from "./pages/PageEmployees.tsx";
+import * as config from './config';
 
 const router = createBrowserRouter([
 	{
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
 		children: [
 			{
 				path: "/simple-form",
-				element: <PageSimpleForm />
+				element: config.environment === 'development' ? <PageSimpleForm /> : <Navigate to="/employees" replace />
 			},
 			{
 				path: "/employees",
