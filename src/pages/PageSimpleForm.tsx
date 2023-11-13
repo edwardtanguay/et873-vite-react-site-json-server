@@ -2,6 +2,7 @@
 import { FormEvent } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { IFrontendEmployee } from "../interfaces";
 
 export const PageSimpleForm = () => {
 	const navigate = useNavigate();
@@ -9,7 +10,7 @@ export const PageSimpleForm = () => {
 	const handleFormSubmit = (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		const formData = new FormData(event.target as HTMLFormElement);
-		const employee = Object.fromEntries(formData);
+		const employee: IFrontendEmployee = ({ ...Object.fromEntries(formData), age: Number(formData.get("age")) }) as IFrontendEmployee;
 		const headers = {
 			"Access-Control-Allow-Origin": "*",
 			"Content-Type": "application/json",
@@ -60,9 +61,9 @@ export const PageSimpleForm = () => {
 					<label className="w-[10rem]" htmlFor="age">
 					Age:
 					</label>
-					<input type="text" id="age" name="age" required />
+					<input type="number" id="age" name="age" required />
 				</div>
-				
+
 				<div className="mb-4 flex gap-2">
 					<label className="w-[10rem]" htmlFor="hireDate">
 						Hire Date:
