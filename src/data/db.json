@@ -26,6 +26,24 @@
       "employeeNumber": "M-8271",
       "notes": "new employee",
       "id": 5
+    },
+    {
+      "firstName": "fff",
+      "lastName": "lll",
+      "age": 34,
+      "hireDate": "2020-02-02",
+      "employeeNumber": "D-2343",
+      "notes": "sdfsdf",
+      "id": 6
+    },
+    {
+      "firstName": "Ronald",
+      "lastName": "Tangnn",
+      "age": 22,
+      "hireDate": "2000-02-02",
+      "employeeNumber": "D-2343",
+      "notes": "added for import test",
+      "id": 7
     }
   ]
 }

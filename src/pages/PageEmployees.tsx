@@ -1,17 +1,8 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { IBackendEmployee } from "../interfaces";
+import db from '../data/db.json';
+
+const employees = db.employees;
 
 export const PageEmployees = () => {
-	const [employees, setEmployees] = useState<IBackendEmployee[]>([]);
-
-	useEffect(() => {
-		(async () => {
-			setEmployees(
-				(await axios.get("http://localhost:3021/employees")).data
-			);
-		})();
-	}, []);
 	return (
 		<>
 			{employees.length === 0 ? (
